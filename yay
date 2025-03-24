@@ -1,0 +1,121 @@
+-- c00lgui by GiGXxX4 2025
+-- GUI Vermelho e Movível
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local CloseButton = Instance.new("TextButton")
+local ExecuteButton1 = Instance.new("TextButton")
+local ExecuteButton2 = Instance.new("TextButton")
+local ExecuteButton3 = Instance.new("TextButton")
+local ExecuteButton4 = Instance.new("TextButton")
+local ExecuteButton5 = Instance.new("TextButton")
+local Dragging
+local Offset
+
+-- Configurações da GUI
+ScreenGui.Name = "c00lgui_by_GiGXxX4_2025"
+ScreenGui.Parent = game.CoreGui
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+MainFrame.Size = UDim2.new(0, 400, 0, 500)
+MainFrame.Position = UDim2.new(0.5, -200, 0.5, -250)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = MainFrame
+Title.Text = "c00lgui by GiGXxX4 2025 (dont leak)"
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 20
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = MainFrame
+CloseButton.Text = "X"
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -35, 0, 5)
+CloseButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 20
+
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+ExecuteButton1.Name = "thomas(train)"
+ExecuteButton1.Parent = MainFrame
+ExecuteButton1.Text = ""
+ExecuteButton1.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton1.Position = UDim2.new(0.5, -100, 0.5, -150)
+ExecuteButton1.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
+ExecuteButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton1.Font = Enum.Font.SourceSansBold
+ExecuteButton1.TextSize = 18
+
+ExecuteButton1.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/UQ04Dtss"))()
+end)
+
+ExecuteButton2.Name = "ExecuteButton2"
+ExecuteButton2.Parent = MainFrame
+ExecuteButton2.Text = "energize fe r6"
+ExecuteButton2.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton2.Position = UDim2.new(0.5, -100, 0.5, -90)
+ExecuteButton2.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
+ExecuteButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton2.Font = Enum.Font.SourceSansBold
+ExecuteButton2.TextSize = 18
+
+ExecuteButton2.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/5X3iugkW"))()
+end)
+
+ExecuteButton3.Name = "ExecuteButton3"
+ExecuteButton3.Parent = MainFrame
+ExecuteButton3.Text = "Infinite Yield"
+ExecuteButton3.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton3.Position = UDim2.new(0.5, -100, 0.5, -30)
+ExecuteButton3.BackgroundColor3 = Color3.fromRGB(60, 0, 0)
+ExecuteButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton3.Font = Enum.Font.SourceSansBold
+ExecuteButton3.TextSize = 18
+
+ExecuteButton3.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+ExecuteButton4.Name = "ExecuteButton4"
+ExecuteButton4.Parent = MainFrame
+ExecuteButton4.Text = "Dex Explorer"
+ExecuteButton4.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton4.Position = UDim2.new(0.5, -100, 0.5, 30)
+ExecuteButton4.BackgroundColor3 = Color3.fromRGB(40, 0, 0)
+ExecuteButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton4.Font = Enum.Font.SourceSansBold
+ExecuteButton4.TextSize = 18
+
+ExecuteButton4.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+end)
+
+ExecuteButton5.Name = "ExecuteButton5"
+ExecuteButton5.Parent = MainFrame
+ExecuteButton5.Text = "Kill all"
+ExecuteButton5.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton5.Position = UDim2.new(0.5, -100, 0.5, 90)
+ExecuteButton5.BackgroundColor3 = Color3.fromRGB(20, 0, 0)
+ExecuteButton5.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton5.Font = Enum.Font.SourceSansBold
+ExecuteButton5.TextSize = 18
+
+ExecuteButton5.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Seco53/FlingScript.lua/refs/heads/main/FlingingScript.lua"))()
+end)
+
+print("c00lgui by GiGXxX4 2025 carregado!")
