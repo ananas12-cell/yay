@@ -10,6 +10,7 @@ local ExecuteButton2 = Instance.new("TextButton")
 local ExecuteButton3 = Instance.new("TextButton")
 local ExecuteButton4 = Instance.new("TextButton")
 local ExecuteButton5 = Instance.new("TextButton")
+local ExecuteButton6 = Instance.new("TextButton")
 local Dragging
 local Offset
 
@@ -27,7 +28,7 @@ MainFrame.Draggable = true
 
 Title.Name = "Title"
 Title.Parent = MainFrame
-Title.Text = "c00lgui by GiGXxX4 2025"
+Title.Text = "c00lgui by GiGXxX4 v1.5"
 Title.Size = UDim2.new(1, 0, 0, 40)
 Title.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -50,7 +51,7 @@ end)
 
 ExecuteButton1.Name = "ExecuteButton1"
 ExecuteButton1.Parent = MainFrame
-ExecuteButton1.Text = "dank engine"
+ExecuteButton1.Text = "Dank engine"
 ExecuteButton1.Size = UDim2.new(0, 200, 0, 50)
 ExecuteButton1.Position = UDim2.new(0.5, -100, 0.5, -150)
 ExecuteButton1.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
@@ -62,9 +63,9 @@ ExecuteButton1.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://pastebin.com/raw/UQ04Dtss"))()
 end)
 
-ExecuteButton2.Name = "energize fe script only r6"
+ExecuteButton2.Name = "ExecuteButton2"
 ExecuteButton2.Parent = MainFrame
-ExecuteButton2.Text = "energize fe gui only r6"
+ExecuteButton2.Text = "energize fe r6"
 ExecuteButton2.Size = UDim2.new(0, 200, 0, 50)
 ExecuteButton2.Position = UDim2.new(0.5, -100, 0.5, -90)
 ExecuteButton2.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
@@ -78,7 +79,7 @@ end)
 
 ExecuteButton3.Name = "ExecuteButton3"
 ExecuteButton3.Parent = MainFrame
-ExecuteButton3.Text = "Executar Infinite Yield"
+ExecuteButton3.Text = "Infinite Yield"
 ExecuteButton3.Size = UDim2.new(0, 200, 0, 50)
 ExecuteButton3.Position = UDim2.new(0.5, -100, 0.5, -30)
 ExecuteButton3.BackgroundColor3 = Color3.fromRGB(60, 0, 0)
@@ -92,7 +93,7 @@ end)
 
 ExecuteButton4.Name = "ExecuteButton4"
 ExecuteButton4.Parent = MainFrame
-ExecuteButton4.Text = "Executar Dex Explorer"
+ExecuteButton4.Text = "Dex Explorer"
 ExecuteButton4.Size = UDim2.new(0, 200, 0, 50)
 ExecuteButton4.Position = UDim2.new(0.5, -100, 0.5, 30)
 ExecuteButton4.BackgroundColor3 = Color3.fromRGB(40, 0, 0)
@@ -116,6 +117,20 @@ ExecuteButton5.TextSize = 18
 
 ExecuteButton5.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://pastebin.com/raw/5eHbUDBp"))()
+end)
+
+ExecuteButton6.Name = "ExecuteButton6"
+ExecuteButton6.Parent = MainFrame
+ExecuteButton6.Text = "Kill all"
+ExecuteButton6.Size = UDim2.new(0, 200, 0, 50)
+ExecuteButton6.Position = UDim2.new(0.5, -100, 0.5, 150)
+ExecuteButton6.BackgroundColor3 = Color3.fromRGB(10, 0, 0)
+ExecuteButton6.TextColor3 = Color3.fromRGB(255, 255, 255)
+ExecuteButton6.Font = Enum.Font.SourceSansBold
+ExecuteButton6.TextSize = 18
+
+ExecuteButton6.MouseButton1Click:Connect(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Seco53/FlingScript.lua/refs/heads/main/FlingingScript.lua"))()
 end)
 
 print("c00lgui by GiGXxX4 2025 carregado!")
