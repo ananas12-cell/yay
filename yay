@@ -1,136 +1,102 @@
--- c00lgui by GiGXxX4 2025
--- GUI Vermelho e Movível
-
 local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
 local Title = Instance.new("TextLabel")
-local CloseButton = Instance.new("TextButton")
-local ExecuteButton1 = Instance.new("TextButton")
-local ExecuteButton2 = Instance.new("TextButton")
-local ExecuteButton3 = Instance.new("TextButton")
-local ExecuteButton4 = Instance.new("TextButton")
-local ExecuteButton5 = Instance.new("TextButton")
-local ExecuteButton6 = Instance.new("TextButton")
-local Dragging
-local Offset
 
--- Configurações da GUI
-ScreenGui.Name = "c00lgui_by_GiGXxX4_2025"
-ScreenGui.Parent = game.CoreGui
+ScreenGui.Name = "TestGUI"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-MainFrame.Size = UDim2.new(0, 400, 0, 500)
-MainFrame.Position = UDim2.new(0.5, -200, 0.5, -250)
-MainFrame.Active = true
-MainFrame.Draggable = true
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+Frame.BackgroundTransparency = 1
 
-Title.Name = "Title"
-Title.Parent = MainFrame
-Title.Text = "c00lgui by GiGXxX4 v1.5"
-Title.Size = UDim2.new(1, 0, 0, 40)
-Title.BackgroundColor3 = Color3.fromRGB(150, 0, 0)
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Parent = Frame
+ImageLabel.Size = UDim2.new(1, 0, 1, 0)
+ImageLabel.Image = "rbxassetid://129663256246932"
+ImageLabel.BackgroundTransparency = 1
+
+Title.Parent = Frame
+Title.Size = UDim2.new(1, 0, 0.1, 0)
+Title.Position = UDim2.new(0, 0, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "c00lshit (fe skided)"
+Title.TextColor3 = Color3.fromRGB(128, 0, 128) -- Roxo
+Title.TextScaled = true
 Title.Font = Enum.Font.SourceSansBold
-Title.TextSize = 20
+Title.TextStrokeTransparency = 0
+Title.TextStrokeColor3 = Color3.new(0, 0, 0) -- Contorno preto para melhor visibilidade
 
-CloseButton.Name = "CloseButton"
-CloseButton.Parent = MainFrame
-CloseButton.Text = "X"
-CloseButton.Size = UDim2.new(0, 30, 0, 30)
-CloseButton.Position = UDim2.new(1, -35, 0, 5)
-CloseButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CloseButton.Font = Enum.Font.SourceSansBold
-CloseButton.TextSize = 20
+-- Função para tornar o GUI arrastável no PC e mobile
+local UIS = game:GetService("UserInputService")
+local dragging, dragInput, dragStart, startPos
 
-CloseButton.MouseButton1Click:Connect(function()
-    ScreenGui:Destroy()
+Frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = Frame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
 end)
 
-ExecuteButton1.Name = "ExecuteButton1"
-ExecuteButton1.Parent = MainFrame
-ExecuteButton1.Text = "Dank engine"
-ExecuteButton1.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton1.Position = UDim2.new(0.5, -100, 0.5, -150)
-ExecuteButton1.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
-ExecuteButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton1.Font = Enum.Font.SourceSansBold
-ExecuteButton1.TextSize = 18
-
-ExecuteButton1.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/UQ04Dtss"))()
+Frame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
 end)
 
-ExecuteButton2.Name = "ExecuteButton2"
-ExecuteButton2.Parent = MainFrame
-ExecuteButton2.Text = "energize fe r6"
-ExecuteButton2.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton2.Position = UDim2.new(0.5, -100, 0.5, -90)
-ExecuteButton2.BackgroundColor3 = Color3.fromRGB(80, 0, 0)
-ExecuteButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton2.Font = Enum.Font.SourceSansBold
-ExecuteButton2.TextSize = 18
-
-ExecuteButton2.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/5X3iugkW"))()
+UIS.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
 end)
 
-ExecuteButton3.Name = "ExecuteButton3"
-ExecuteButton3.Parent = MainFrame
-ExecuteButton3.Text = "Infinite Yield"
-ExecuteButton3.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton3.Position = UDim2.new(0.5, -100, 0.5, -30)
-ExecuteButton3.BackgroundColor3 = Color3.fromRGB(60, 0, 0)
-ExecuteButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton3.Font = Enum.Font.SourceSansBold
-ExecuteButton3.TextSize = 18
+-- Função para executar scripts
+local function ExecuteScript(url)
+    local success, response = pcall(function()
+        return game:HttpGet(url, true)
+    end)
+    if success then
+        loadstring(response)()
+    else
+        warn("Falha ao carregar o script: " .. url)
+    end
+end
 
-ExecuteButton3.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+-- Criar botões para executar scripts
+local scripts = {
+    {"Infinite Yield", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"},
+    {"Fling Script", "https://raw.githubusercontent.com/Seco53/FlingScript.lua/refs/heads/main/FlingingScript.lua"},
+    {"Pastebin Script", "https://pastebin.com/raw/5X3iugkW"},
+    {"Animation GUI", "https://gist.githubusercontent.com/MelonsStuff/f018928d2f010789a150b4924e279b16/raw/8de399eb9cbccbde430fcd37270cd4ff171f8b8e/AnimationGUI.txt"}
+}
+
+for i, scriptData in ipairs(scripts) do
+    local button = Instance.new("TextButton")
+    button.Parent = Frame
+    button.Size = UDim2.new(0.8, 0, 0.1, 0)
+    button.Position = UDim2.new(0.1, 0, 0.2 + (i * 0.12), 0)
+    button.Text = scriptData[1]
+    button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    button.TextColor3 = Color3.new(1, 1, 1)
+    button.TextScaled = true
+    button.MouseButton1Click:Connect(function()
+        ExecuteScript(scriptData[2])
+    end)
+end
+
+-- Exemplo de botão para alternar visibilidade
+local Button = Instance.new("TextButton")
+Button.Parent = Frame
+Button.Size = UDim2.new(0.2, 0, 0.1, 0)
+Button.Position = UDim2.new(0.4, 0, 0.9, 0)
+Button.Text = "Toggle GUI"
+Button.MouseButton1Click:Connect(function()
+    Frame.Visible = not Frame.Visible
 end)
-
-ExecuteButton4.Name = "ExecuteButton4"
-ExecuteButton4.Parent = MainFrame
-ExecuteButton4.Text = "Dex Explorer"
-ExecuteButton4.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton4.Position = UDim2.new(0.5, -100, 0.5, 30)
-ExecuteButton4.BackgroundColor3 = Color3.fromRGB(40, 0, 0)
-ExecuteButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton4.Font = Enum.Font.SourceSansBold
-ExecuteButton4.TextSize = 18
-
-ExecuteButton4.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
-end)
-
-ExecuteButton5.Name = "ExecuteButton5"
-ExecuteButton5.Parent = MainFrame
-ExecuteButton5.Text = "Kill a player"
-ExecuteButton5.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton5.Position = UDim2.new(0.5, -100, 0.5, 90)
-ExecuteButton5.BackgroundColor3 = Color3.fromRGB(20, 0, 0)
-ExecuteButton5.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton5.Font = Enum.Font.SourceSansBold
-ExecuteButton5.TextSize = 18
-
-ExecuteButton5.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/5eHbUDBp"))()
-end)
-
-ExecuteButton6.Name = "ExecuteButton6"
-ExecuteButton6.Parent = MainFrame
-ExecuteButton6.Text = "Kill all"
-ExecuteButton6.Size = UDim2.new(0, 200, 0, 50)
-ExecuteButton6.Position = UDim2.new(0.5, -100, 0.5, 150)
-ExecuteButton6.BackgroundColor3 = Color3.fromRGB(10, 0, 0)
-ExecuteButton6.TextColor3 = Color3.fromRGB(255, 255, 255)
-ExecuteButton6.Font = Enum.Font.SourceSansBold
-ExecuteButton6.TextSize = 18
-
-ExecuteButton6.MouseButton1Click:Connect(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Seco53/FlingScript.lua/refs/heads/main/FlingingScript.lua"))()
-end)
-
-print("c00lgui by GiGXxX4 2025 carregado!")
