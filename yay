@@ -1,1 +1,41 @@
----updating---
+local keySystem = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local textBox = Instance.new("TextBox")
+local submitButton = Instance.new("TextButton")
+local copyButton = Instance.new("TextButton")
+
+keySystem.Name = "KeySystem"
+keySystem.Parent = game.CoreGui
+
+frame.Parent = keySystem
+frame.Size = UDim2.new(0, 300, 0, 150)
+frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+frame.Active = true
+frame.Draggable = true -- Torna o GUI móvel
+
+textBox.Parent = frame
+textBox.Size = UDim2.new(0, 200, 0, 50)
+textBox.Position = UDim2.new(0.5, -100, 0.2, 0)
+textBox.Text = "Enter Key Here"
+
+submitButton.Parent = frame
+submitButton.Size = UDim2.new(0, 200, 0, 30)
+submitButton.Position = UDim2.new(0.5, -100, 0.6, 0)
+submitButton.Text = "Submit"
+
+copyButton.Parent = frame
+copyButton.Size = UDim2.new(0, 200, 0, 30)
+copyButton.Position = UDim2.new(0.5, -100, 0.8, 0)
+copyButton.Text = "Copy Link"
+
+copyButton.MouseButton1Click:Connect(function()
+    setclipboard("https://raw.githubusercontent.com/ananas12-cell/AZDADSQD/refs/heads/main/zsxzszs")
+end)
+
+submitButton.MouseButton1Click:Connect(function()
+    if textBox.Text == "skidedaverage-c00lgui_LALloli" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ananas12-cell/c000lgui-by-GiGXxX4/refs/heads/main/gui"))()
+        keySystem:Destroy() -- Remove o Key System
+    end
+end)
